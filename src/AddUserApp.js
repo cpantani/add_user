@@ -1,5 +1,4 @@
 import React,{ Component, useState } from "react";
-
 import Form from './AddUserForm';
 
 class AddUser extends Component{
@@ -9,17 +8,22 @@ class AddUser extends Component{
 	};
 
 	onSubmit= fields => {
-		this.setState({ fields })
+		this.setState({fields})
 		const objectToSend = {
 			fields
 		}
-		fetch('http://localhost:5000/api_post',{
+		fetch('http://localhost:5000/api_post', {
 			method: 'POST',
-			headers: {'Content-type': 'application/json',
+			headers: {
+				'Content-type': 'application/json',
 			},
 			body: JSON.stringify(objectToSend),
-		}).then(res=> res.json())
-			.then(res => console.log(res))
+		})
+			.then((res) => res.json())
+			.then((res) => {
+		});
+
+
 	};
 
 	render(){
